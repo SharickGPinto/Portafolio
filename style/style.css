@@ -6,15 +6,15 @@
 
 body {
   font-family: Verdana, Arial, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   background: #1a1a2e;
   color: #c9d1d9;
+  overflow-x: hidden;
 }
 
 .forum-header {
   background: linear-gradient(180deg, #16213e 0%, #0f1626 100%);
   border-bottom: 3px solid #367BF0;
-  padding: 0;
 }
 
 .header-top {
@@ -60,20 +60,22 @@ body {
 }
 
 .barrita {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   background: #16213e;
-  padding: 0;
-  display: flex;
   border-bottom: 1px solid #2a2a3e;
+  width: 100%;
 }
 
 .barritas {
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1rem;
   background: #18182e;
   border-right: 1px solid #393969;
   color: #8b949e;
   text-decoration: none;
   font-size: 11px;
   font-weight: bold;
+  text-align: center;
   transition: all 0.2s;
   border-top: 3px solid transparent;
 }
@@ -85,35 +87,33 @@ body {
   border-top-color: #367BF0;
 }
 
-
 .cuadrito {
-  max-width: 1400px;
+  width: 100%;
   margin: 1rem auto;
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 1rem;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-
 .user-sidebar {
-  position: sticky;
-  top: 1rem;
-  height: fit-content;
+  position: relative;
+  top: 0;
+  height: auto;
 }
 
 .user-card {
   background: #16213e;
   border: 1px solid #2a2a3e;
   border-radius: 3px;
-  margin-bottom: 1rem;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  text-align: center;
 }
 
 .user-card-header {
   background: linear-gradient(180deg, #367BF0, #2a5fc7);
   padding: 0.5rem;
-  text-align: center;
   font-weight: bold;
   font-size: 10px;
   color: white;
@@ -125,21 +125,20 @@ body {
 }
 
 .user-avatar {
-  text-align: center;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .avatar-img {
-  width: 20vh;
-  height: 20vh;
+  width: 100px;
+  height: 100px;
   border: 3px solid #367BF0;
   border-radius: 3px;
   background: #0f1626;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  font-size: 60px;
 }
 
 .avatar-img img {
@@ -149,9 +148,7 @@ body {
   display: block;
 }
 
-
 .user-title {
-  text-align: center;
   font-weight: bold;
   color: #9B59B6;
   font-size: 12px;
@@ -171,6 +168,9 @@ body {
 .user-stats {
   font-size: 10px;
   line-height: 1.8;
+  width: 100%;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .user-stats div {
@@ -189,6 +189,21 @@ body {
   font-weight: bold;
 }
 
+.firma-terminal {
+  font-family: 'Courier Prime', monospace;
+  background: #0f1626;
+  padding: 0.6rem 0.7rem;
+  border-left: 3px solid #367BF0;
+  margin-top: 1.5rem;
+  white-space: pre-line;
+  font-size: 12px;
+  color: #c9d1d9;
+  border-radius: 3px;
+  width: 90%;
+  margin: 1rem auto 0 auto;
+  text-align: left;
+}
+
 .skills-category {
   margin-top: 1rem;
   font-weight: bold;
@@ -196,28 +211,181 @@ body {
   font-size: 12px;
   border-bottom: 1px dotted #2a2a3e;
   padding-bottom: 4px;
+  text-align: center;
 }
 
 .skill-item {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin: 0.4rem 0;
+  gap: 10px;
 }
 
 .skill-icon {
   width: 24px;
   height: 24px;
-  margin-right: 10px;
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .skill-label {
   font-size: 13px;
   color: #ffffff;
+  min-width: 80px;
+  text-align: left;
+}
+
+.forum-content {
+  background: #16213e;
+  border: 1px solid #2a2a3e;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  background: #0f1626;
+  padding: 0.7rem 1rem;
+  font-size: 10px;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.breadcrumb a {
+  color: #367BF0;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #8b949e;
+  margin: 0 0.3rem;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-author {
+  background: #1a1a2e;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.post-body {
+  padding: 1rem;
+  background: #16213e;
+  text-align: left;
+}
+
+.post-content h3 {
+  color: #367BF0;
+  font-size: 14px;
+  margin-bottom: 0.7rem;
+}
+
+.post-content p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin-bottom: 0.7rem;
+}
+
+.terminal-block {
+  font-family: 'Courier Prime', monospace;
+  background: #1a1a2e;
+  padding: 0.5rem;
+  border-left: 3px solid #367BF0;
+  margin-top: 1rem;
+  white-space: pre-line;
+  font-size: 11px;
+  color: #c9d1d9;
+}
+
+.resaltado-sistemas {
+  color: #367BF0;
+}
+
+.resaltado-crimi {
+  color: #9B59B6;
+}
+
+.resaltado-ciber {
+  color: #4EC9B0;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  .cuadrito {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .avatar-img {
+    width: 15vh;
+    height: 15vh;
+  }
+
+  .barritas {
+    font-size: 12px;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .post-container {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+  }
+
+  .post-author {
+    border-right: 1px solid #2a2a3e;
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .cuadrito {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .avatar-img {
+    width: 20vh;
+    height: 20vh;
+  }
+
+  .barritas {
+    font-size: 13px;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cuadrito {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .barrita {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .avatar-img {
+    width: 24vh;
+    height: 24vh;
+  }
 }
