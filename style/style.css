@@ -328,6 +328,14 @@ body {
   color: #4EC9B0;
 }
 
+@media (max-width: 599px) {
+  .cuadrito {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
   .cuadrito {
